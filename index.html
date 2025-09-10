@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="es-ve">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#ff66b2" />
+
+  <title>Salón Belleza • Maquillaje, Peluquería, Manicure</title>
+  <meta name="description" content="Servicio profesional de maquillaje, peluquería, manicure, pedicure, restauración facial y depilación de cejas. Reserva fácil vía WhatsApp." />
+  <meta name="keywords" content="maquillaje, peluquería, manicure, pedicure, depilación de cejas, restauración facial, belleza, salón, estética" />
+  <link rel="canonical" href="https://belleza.vercel.app" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://belleza.vercel.app" />
+  <meta property="og:title" content="Tu Salón de Belleza • Servicios profesionales" />
+  <meta property="og:description" content="Maquillaje, peluquería, manicure, pedicure, restauración facial y depilación de cejas. Reserva fácil por WhatsApp." />
+  <meta property="og:image" content="https://belleza.vercel.app/belleza.png" />
+  <meta property="og:locale" content="es_ES" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Tu Salón de Belleza • Servicios profesionales" />
+  <meta name="twitter:description" content="Maquillaje, peluquería, manicure, pedicure y más. Reserva ahora por WhatsApp." />
+  <meta name="twitter:image" content="https://belleza.vercel.app/belleza.png" />
+
+  <!-- Apple meta -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Salón Belleza" />
+  <link rel="apple-touch-icon" href="https://belleza.vercel.app/belleza.png" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="https://belleza.vercel.app/belleza.png" sizes="32x32" />
+  <link rel="icon" href="https://belleza.vercel.app/belleza.png" sizes="192x192" />
+  <link rel="apple-touch-icon" sizes="180x180" href="https://belleza.vercel.app/belleza.png" />
+
+  <!-- Manifest for PWA -->
+  <link rel="manifest" href="/manifest.json" />
+
+  <!-- W3.CSS -->
+  
+  <link rel="stylesheet" href="style.css" />
+  
+  <link rel="stylesheet" href="icofont.min.css" />
+  
+  <link rel="stylesheet" href="fuentes.css" />
+  <!-- W3.CSS CDN -->
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+ <link rel="canonical" href="https://tusitio.example.com/" />
+  
+  <!-- Optional: icon -->
+  <link rel="icon" href="data:;base64,=" />
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BeautySalon",
+    "name":"Tu Salón de Belleza",
+    "description":"Maquillaje, peluquería, manicure, pedicure, restauración facial y depilación de cejas.",
+    "url":"https://tusitio.example.com/",
+    "telephone":"+521234567890",
+    "address":{
+      "@type":"PostalAddress",
+      "streetAddress":"Dirección del Salón, Ciudad",
+      "addressLocality":"Ciudad",
+      "addressRegion":"Provincia",
+      "postalCode":"00000",
+      "addressCountry":"MX"
+    },
+    "sameAs": []
+  }
+  </script>
+  <script defer src="menu.js"></script>
+  <script defer src="sw.js"></script>
+  
+  <script defer src="whatsapp.js"></script>
+    
+</head>
+<body class="w3-light-grey" id="top">
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+  <header class="w3-container brand site" role="banner" aria-label="Encabezado del sitio">
+  <div class="header-bar">
+    <!-- Logo a la izquierda -->
+    <div class="logo" style="display:flex;align-items:center;gap:.6rem">
+      <!-- <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=80&auto=format&fit=crop&crop=faces"
+           alt="Logo del salón" width="56" height="56" style="border-radius:8px;">-->
+      <h3>LOGO</h3>
+      <span class="visually-hidden">Tu Salón de Belleza</span>
+    </div>
+
+    <!-- Botón menú móvil (derecha) -->
+    <button id="menuToggle" class="w3-button w3-hide-large w3-hide-medium"
+            aria-controls="mobileMenu" aria-expanded="false" aria-label="Abrir menú">
+      ☰
+    </button>
+
+    <!-- Menú de escritorio (visible en pantallas grandes) -->
+    <nav aria-label="Menú principal" role="navigation" class="w3-hide-small desktop-menu">
+      <ul class="w3-navbar w3-transparent w3-large" style="display:flex;gap:.5rem;margin:0;padding:0;">
+        <li><a class="w3-bar-item w3-button w3-hover-white w3-text-white" href="#servicios">Servicios</a></li>
+        <li><a class="w3-bar-item w3-button w3-hover-white w3-text-white" href="#galeria">Galería</a></li>
+        <li><a class="w3-bar-item w3-button w3-hover-white w3-text-white" href="#ubicacion">Ubicación</a></li>
+        <li><a class="w3-bar-item w3-button w3-hover-white w3-text-white" href="#contacto">Reservar</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- Menú móvil (sidebar que aparece desde la derecha) -->
+<nav id="mobileMenu" class="mobile-menu" role="navigation" aria-label="Menú móvil" aria-hidden="true">
+  <button id="closeMenu" class="close-btn" aria-label="Cerrar menú">✕</button>
+
+  <a href="#servicios" class="w3-bar-item w3-button">Servicios</a>
+  <a href="#galeria" class="w3-bar-item w3-button">Galería</a>
+  <a href="#ubicacion" class="w3-bar-item w3-button">Ubicación</a>
+  <a href="#contacto" class="w3-bar-item w3-button">Reservar</a>
+</nav>
+
+<!-- Overlay (oscurece fondo) -->
+<div id="overlay" class="menu-overlay" aria-hidden="true"></div>
+
+
+  <main id="main" class="site" role="main" aria-labelledby="hero-heading">
+    <!-- Hero -->
+    <section class="hero w3-white" aria-labelledby="hero-heading">
+      <div class="hero-flex">
+        <div style="flex:1;">
+          
+                <h2 id="hero-heading" style="font-size:1.6rem;margin:0 0 .5rem;">Realza tu belleza - Servicios profesionales</h2>
+      
+          <p class="muted">Maquillaje social, peluquería, manicure/pedicure, restauración facial y depilación de cejas. Reserva rápido por WhatsApp.</p>
+          <p style="margin-top:1rem;">
+            <a class="w3-button brand-btn w3-padding-large w3-margin-right" href="#contacto">Reservar ahora</a>
+            <a class="w3-button secondary-btn w3-padding-large w3-hide-small" href="#galeria">Ver galería</a>
+          </p>
+        </div>
+
+     
+      </div>
+    </section>
+
+    <!-- Servicios -->
+    <section id="servicios" class="w3-container w3-padding-16" aria-labelledby="servicios-heading">
+      <h2 id="servicios-heading">Servicios</h2>
+      <p class="muted">Ofrecemos una amplia gama de servicios de belleza. Precios y paquetes personalizados.</p>
+
+      <div class="services-grid" role="list">
+        <article class="w3-card-4 w3-padding service-card" role="listitem" aria-labelledby="s1-title">
+          <img srcset="
+            https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=400&auto=format&fit=crop 400w,
+            https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=800&auto=format&fit=crop 800w
+          " src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=800&auto=format&fit=crop" alt="Maquillaje de novia profesional" loading="lazy">
+          <h3 id="s1-title">Maquillaje profesional</h3>
+          <p class="muted">Social, novias, editorial. Productos hipoalergénicos disponibles.</p>
+        </article>
+
+        <article class="w3-card-4 w3-padding service-card" role="listitem" aria-labelledby="s2-title">
+          <img src="https://unsplash.com/es/fotos/mujer-con-camisa-roja-de-manga-larga-sosteniendo-soplador-de-pelo-FkAZqQJTbXM" alt="Estilista cortando cabello" loading="lazy">
+          <h3 id="s2-title">Peluquería</h3>
+          <p class="muted">Corte, color, peinados para eventos y tratamientos capilares.</p>
+        </article>
+
+        <article class="w3-card-4 w3-padding service-card" role="listitem" aria-labelledby="s3-title">
+          <img src="https://unsplash.com/es/fotos/un-primer-plano-de-la-mano-de-una-persona-sosteniendo-un-tubo-m7P9Dwa9qzU?utm_content=creditShareLink&utm_medium=referral&utm_source=unsplash" alt="Manicure profesional con barniz" loading="lazy">
+          <h3 id="s3-title">Manicure & Pedicure</h3>
+          <p class="muted">Cuidado, esmaltado, uñas semipermanentes y tratamientos de spa para pies.</p>
+        </article>
+
+        <article class="w3-card-4 w3-padding service-card" role="listitem" aria-labelledby="s4-title">
+          <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=800&auto=format&fit=crop" alt="Tratamiento facial" loading="lazy">
+          <h3 id="s4-title">Restauración facial</h3>
+          <p class="muted">Limpiezas profundas, hidratación y tratamientos especializados según tipo de piel.</p>
+        </article>
+
+        <article class="w3-card-4 w3-padding service-card" role="listitem" aria-labelledby="s5-title">
+          <img src="https://unsplash.com/es/fotos/un-primer-plano-del-ojo-de-una-mujer-con-maquillaje-nt6KRD9im7A" alt="Depilación de cejas" loading="lazy">
+          <h3 id="s5-title">Depilación de cejas</h3>
+          <p class="muted">Diseño de cejas con técnicas personalizadas para tu rostro.</p>
+        </article>
+
+        <article class="w3-card-4 w3-padding service-card" role="listitem" aria-labelledby="s6-title">
+          <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=800&auto=format&fit=crop" alt="Servicio de belleza combinado" loading="lazy">
+          <h3 id="s6-title">Paquetes</h3>
+          <p class="muted">Combina servicios y obtén descuentos para eventos y grupos.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Galería -->
+    <section id="galeria" class="w3-container w3-padding-16" aria-labelledby="galeria-heading">
+      <h2 id="galeria-heading">Galería de trabajos reales</h2>
+      <p class="muted">Fotos reales de clientes (con su consentimiento). Actualiza estas imágenes con las tuyas.</p>
+
+      <div class="w3-row-padding" role="list">
+        <!-- Replace URLs with your real photos -->
+        <div class="w3-col s12 m6 l4" role="listitem">
+          <figure class="w3-card-4 w3-margin-bottom" aria-labelledby="g1-caption">
+            <img src="https://images.unsplash.com/photo-1545274655-6f0fbf9ee1f5?q=80&w=800&auto=format&fit=crop" alt="Maquillaje de evento - resultado final" loading="lazy" style="width:100%;height:220px;object-fit:cover;">
+            <figcaption id="g1-caption" class="w3-container">Maquillaje para evento</figcaption>
+          </figure>
+        </div>
+
+        <div class="w3-col s12 m6 l4" role="listitem">
+          <figure class="w3-card-4 w3-margin-bottom" aria-labelledby="g2-caption">
+            <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=800&auto=format&fit=crop" alt="Peinado y corte moderno" loading="lazy" style="width:100%;height:220px;object-fit:cover;">
+            <figcaption id="g2-caption" class="w3-container">Corte y peinado</figcaption>
+          </figure>
+        </div>
+
+        <div class="w3-col s12 m6 l4" role="listitem">
+          <figure class="w3-card-4 w3-margin-bottom" aria-labelledby="g3-caption">
+            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=800&auto=format&fit=crop" alt="Manicure con esmaltado perfecto" loading="lazy" style="width:100%;height:220px;object-fit:cover;">
+            <figcaption id="g3-caption" class="w3-container">Manicure profesional</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ubicación (Google Maps) -->
+    <section id="ubicacion" class="w3-container w3-padding-16" aria-labelledby="map-heading">
+      <h2 id="map-heading">Ubicación</h2>
+      <p class="muted">Estamos en: Dirección del Salón, Ciudad. Ajusta la dirección en el iframe si es necesario.</p>
+
+      <div class="map-wrapper" role="region" aria-label="Mapa con la ubicación del salón">
+        <!-- Replace "Dirección+del+Salón+Ciudad" with your real address or coordinates -->
+        <iframe
+          title="Mapa de la ubicación del salón"
+          src="https://www.google.com/maps?q=Dirección+del+Salón+Ciudad&output=embed"
+          loading="lazy" aria-hidden="false" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </section>
+
+    <!-- Contacto / Reserva -->
+    <section id="contacto" class="w3-container w3-padding-16" aria-labelledby="contacto-heading">
+      <h2 id="contacto-heading">Reservar cita</h2>
+      <p class="muted">Rellena el formulario y envía tu solicitud directamente a WhatsApp.</p>
+
+      <form id="bookingForm" class="w3-card-4 w3-padding" aria-describedby="form-desc" novalidate>
+        <p id="form-desc" class="muted">Los campos marcados con <span aria-hidden="true">*</span> son obligatorios.</p>
+
+        <label for="name">Nombre completo <span aria-hidden="true">*</span></label>
+        <input class="w3-input" id="name" name="name" type="text" required aria-required="true" placeholder="Ej. Ana Pérez">
+        </br>
+        <label for="phone">Teléfono / WhatsApp <span aria-hidden="true">*</span></label>
+        <input class="w3-input" id="phone" name="phone" type="tel" required aria-required="true" pattern="[0-9+ ()-]{6,}" placeholder="+52 1 55 1234 5678">
+ </br>
+        <label for="email">Correo electrónico</label>
+        <input class="w3-input" id="email" name="email" type="email" placeholder="ejemplo@dominio.com">
+ </br>
+        <label for="service">Servicio deseado <span aria-hidden="true">*</span></label>
+        <select id="service" name="service" class="w3-select" required aria-required="true">
+          <option value="" disabled selected>Selecciona un servicio</option>
+          <option value="Maquillaje">Maquillaje</option>
+          <option value="Peluquería">Peluquería</option>
+          <option value="Manicure">Manicure</option>
+          <option value="Pedicure">Pedicure</option>
+          <option value="Restauración facial">Restauración facial</option>
+          <option value="Depilación de cejas">Depilación de cejas</option>
+          <option value="Paquete">Paquete</option>
+        </select>
+ </br>
+         
+        <div class="w3-row" style="gap:.5rem;">
+          <div class="w3-col s12 m6">
+             </br>
+            <label for="date">Fecha preferida</label>
+            <input class="w3-input" id="date" name="date" type="date" min="">
+          </div> 
+        
+          <div class="w3-col s12 m6">
+               </br>
+            <label for="time">Hora preferida</label>
+            <input class="w3-input" id="time" name="time" type="time">
+          </div>
+        </div>
+ </br>
+        <label for="message">Mensaje adicional</label>
+        <textarea id="message" name="message" class="w3-input" rows="3" placeholder="Ej. Preferiría horario vespertino, soy alérgica a..."></textarea>
+
+        <div class="w3-margin-top">
+          <button type="submit" class="w3-button brand-btn w3-block" id="submitBtn">Enviar a WhatsApp</button>
+        </div>
+
+        <div id="form-status" aria-live="polite" class="w3-margin-top muted" role="status"></div>
+      </form>
+
+      <noscript>
+        <p class="muted">Para enviar una reserva por WhatsApp, habilite JavaScript. También puede contactarnos directamente al <strong>+58 412 034 8988</strong>.</p>
+      </noscript>
+    </section>
+  </main>
+
+  <footer class="w3-container site" role="contentinfo">
+    <p>© <span id="year"></span> Tu Salón de Belleza — Todos los derechos reservados.</p>
+    <p class="muted">Tel: +58 412 034 8988· <a href="#contacto">Reservar</a></br>
+      Desarrollado por Yampiero Mujica
+    </p>
+    
+  <!-- Footer -->
+  
+    <div class="footer-social">
+      <a href="https://facebook.com" target="_blank" aria-label="Facebook"><span class="icofont-facebook"></span></a>
+      <a href="https://twitter.com" target="_blank" aria-label="X"><span class="icofont-x"></span></a>
+      <a href="https://instagram.com" target="_blank" aria-label="Instagram"><span class="icofont-instagram"></span></a>
+    </div>
+  
+  </footer>
+
+  
+
+  <script>
+    // Registrar service worker para PWA
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/sw.js')
+        .then(reg => console.log("ServiceWorker registrado:", reg.scope))
+        .catch(err => console.error("Error registrando ServiceWorker:", err));
+      });
+    }
+  </script>
+</body>
+</html>
+

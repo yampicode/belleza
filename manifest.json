@@ -1,0 +1,28 @@
+{
+  "name": "Tu Salón de Belleza",
+  "short_name": "Belleza",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ff66b2",
+  "description": "Maquillaje, peluquería, manicure, pedicure, restauración facial y depilación de cejas. Reserva fácil vía WhatsApp.",
+  "icons": [
+    {
+      "src": "belleza.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "belleza.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "belleza.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}
+
+
