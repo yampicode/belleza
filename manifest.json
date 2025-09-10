@@ -8,17 +8,17 @@
   "description": "Maquillaje, peluquería, manicure, pedicure, restauración facial y depilación de cejas. Reserva fácil vía WhatsApp.",
   "icons": [
     {
-      "src": "belleza.png",
+      "src": "/belleza.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "belleza.png",
+      "src": "/belleza.png",
       "sizes": "512x512",
       "type": "image/png"
     },
     {
-      "src": "belleza.png",
+      "src": "/belleza.png",
       "sizes": "180x180",
       "type": "image/png"
     }
